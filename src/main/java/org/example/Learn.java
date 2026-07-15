@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Learn {
     public static void main(String[] args) {
@@ -149,6 +150,45 @@ public class Learn {
 //            System.out.println("Second largest element in the array is: " + arr[arr.length - 2]);
 //        }
     }
+
+    public void sortString() {
+//        String str = "String";
+//        char[] charArray = str.toCharArray();
+//        Arrays.sort(charArray);
+//        System.out.println("Sorted string: " + new String(charArray));
+
+        {
+            String str = "testing";
+            char[] characters = str.toCharArray();
+            for (int i = 0; i < characters.length; i++) {
+                for (int j = i + 1; j < characters.length; j++) {
+                    if (characters[i] > characters[j]) {
+                        char temp = characters[i];
+                        characters[i] = characters[j];
+                        characters[j] = temp;
+                    }
+                }
+            }
+            String sortedString = new String(characters);
+            System.out.println(sortedString);
+
+        }
+    }
+
+    public void printFirstCaharacterOfEachWord() {
+        String str = "Java is an object oriented language";
+        System.out.println("String: " + str);
+        String[] strArray = str.split(" ");
+        for (String s : strArray) {
+            System.out.println(s.charAt(0));
+        }
+    }
+
+    public void regex() {
+        System.out.println(Pattern.matches("geeks.*", "geeksforgeeks)")); // true
+        System.out.println(Pattern.matches("geeks[0-9]+", "geeks12s"));   // false
+    }
+
 
     public void work() {
 
